@@ -1,1 +1,2 @@
-Console.log("My ist program");
+console.log("My ist program");
+console.log("Hello world");
