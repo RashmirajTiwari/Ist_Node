@@ -9,3 +9,17 @@ const student={
     }
 }
 student.greet();
+
+var fruits=['Apple','','Lemon','','Banana'];
+
+console.log(fruits.map((fruit)=>{
+    if(fruit===''){
+        return 'empty string'
+    }else{
+        return fruit
+    }
+}))
+
+const hobbies=['Cooking','sports'];
+hobbies.push('programming');
+console.log(hobbies);
