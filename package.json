@@ -1,0 +1,24 @@
+{
+  "name": "ist_node",
+  "version": "1.0.0",
+  "description": "My ist node js project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "start-server": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RashmirajTiwari/Ist_Node.git"
+  },
+  "author": "Rashmiraj Tiwari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RashmirajTiwari/Ist_Node/issues"
+  },
+  "homepage": "https://github.com/RashmirajTiwari/Ist_Node#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
