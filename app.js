@@ -1,4 +1,4 @@
-const http=require('http');
+//const http=require('http');
 // const routes=require('./routes.js');
 
 
@@ -34,14 +34,34 @@ const http=require('http');
 //exprss.js;
 
 const express=require('express');
+const bodyParser=require('body-parser');
 const app=express();
-app.use((req,res,next)=>{
-    console.log("In the middleware");
+app.use(bodyParser.urlencoded({extended:false}))
+// app.use((req,res,next)=>{
+//     console.log("In the middleware");
+//     next();
+// });
+// app.use((req,res,next)=>{
+//     console.log("In the another middleware");
+//     res.send({key:"value"});
+// });
+
+app.use('/',(req,res,next)=>{
+    console.log("this is run always");
     next();
 });
-app.use((req,res,next)=>{
-    console.log("In the another middleware");
-    res.send({key:"value"});
+app.use('/add-product',(req,res,next)=>{
+    res.send('<form action="/product" method="POST"><input type="text" name="title"><input type="text" name="size"><button type="submit">Add product</button></form>');
+    console.log("In the middleware");
 });
-const server = http.createServer(app);
- server.listen(3000);
+app.use('/product',(req,res,next)=>{
+    console.log(req.body);
+    res.redirect('/');
+    
+});
+app.use('/',(req,res,next)=>{
+    console.log("In the another middleware");
+    res.send("<h2>Hello Express</h2>");
+
+});
+app.listen(5000);
