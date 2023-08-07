@@ -4,5 +4,5 @@ const router=express.Router();
 const productsController=require('../controllers/products')
 
 router.get('/add-product',productsController.getAddProducts);
-router.post('/product',productsController.getAddProducts);
+router.post('/product',productsController.postAddProducts);
 module.exports=router;
